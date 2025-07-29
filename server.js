@@ -10,6 +10,7 @@ const passUserToView =require('./middleware/passUserToView')
 const isSignedIn = require('./middleware/isSignedIn')
 const productsRoutes = require('./routes/products.routes')
 const ordersRoutes = require('./routes/orders.routes')
+const isAdmin = require('./middleware/isAdmin')
 
 // Middleware
 app.use(express.static('public')); //all static files are in the public folder
@@ -33,8 +34,9 @@ conntectToDB()
 
 app.use('/auth', authRoutes)
 app.use(isSignedIn)
-app.use('/products',productsRoutes)
 app.use('/orders',ordersRoutes)
+
+app.use('/products',productsRoutes)
 
 const port = process.env.PORT || 3000
 
