@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahraa Yarnn</title>
+</head>
+<body>
+    <h1>All products</h1>
+    <% allProducts.forEach(product => { %>
+        <p>Product Name: <%= product.productName %></p>
+        <p>Price: <%= product.price %> BD</p>
+        <p>Description: <%= product.description %></p>
+        <hr>
+
+   <% }) %>
+    
+</body>
+</html>
