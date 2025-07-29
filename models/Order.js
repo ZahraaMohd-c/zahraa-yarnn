@@ -20,12 +20,6 @@ const orderSchema = new mongoose.Schema({
     orderDate: {
         type: Date,
         default: Date.now
-    },
-    status: {
-        type: String,
-        enum: ['pending', 'shipped', 'delivered', 'cancelled'],
-        default: 'pending'
-    },
-    notes: String
+    }
     
 })
