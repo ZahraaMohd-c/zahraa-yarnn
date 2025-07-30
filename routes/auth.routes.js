@@ -9,9 +9,9 @@ router.get("/sign-up", (req, res) => {
 
 router.post("/sign-up", async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, password ,phoneNumber} = req.body;
 
-        if (!username || !password) {
+        if (!username || !password || !phoneNumber) {
             return res.render("auth/sign-up", {
                 error: "All fields are required."
             });
@@ -29,6 +29,9 @@ router.post("/sign-up", async (req, res) => {
                 error: "Username is already taken."
 
             });
+        }
+        if(phoneNumber.length<8){
+            return res.render('auth/sign-up',{error: 'Enter a correct phone Number'})
         }
 
         const hashedPassword = bcrypt.hashSync(password, 10);

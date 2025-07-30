@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Password is required ']
     },
+    phoneNumber:{
+        type: Number,
+        required: [,'Phone number is required for contact']
+    },
     role:{
         type: String ,
         enum: ['customer', 'admin'],
