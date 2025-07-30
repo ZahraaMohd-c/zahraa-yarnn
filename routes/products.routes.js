@@ -7,7 +7,6 @@ router.get('/', async (req,res) => {
     try{
         const allProducts = await Product.find()
         res.render('products/all-products.ejs',{allProducts})
-
     }
     catch(error){
         console.log(error)
@@ -29,6 +28,7 @@ router.post('/', async (req,res) => {
 
     }
 })
+
 router.get('/:id', async (req,res) => {
     try{
         const foundProduct = await Product.findById(req.params.id)

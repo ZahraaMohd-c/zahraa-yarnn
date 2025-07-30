@@ -16,6 +16,7 @@
     <% if ( userRole.role === 'admin') { %>
       <a href="/products/<%= foundProduct._id  %>/edit">Update</a>
     <% } %>
-    
+    <a href="/orders/<%= foundProduct._id %>">Order</a>
+
 </body>
 </html>

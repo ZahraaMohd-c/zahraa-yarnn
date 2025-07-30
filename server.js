@@ -35,9 +35,9 @@ conntectToDB()
 app.use('/auth', authRoutes)
 app.use(isSignedIn)
 app.use('/orders',ordersRoutes)
+app.use('/products',productsRoutes)
 // app.use(isAdmin)
 
-app.use('/products',productsRoutes)
 
 const port = process.env.PORT || 3000
 

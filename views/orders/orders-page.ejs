@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahraa Yarnn</title>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <h1>Orders</h1>
+    <hr>
+    <% let totalPrice=0 %>
+    <p><% allOrders.forEach(order => { %>
+        <% const quantity = Number(order.quantity) %>
+        <% let subTotal= 0 %>
+        <% order.products.forEach(product => { %>
+            <p>Product Name: <%= product.productName %></p>
+            <p>Price: <%= product.price %> BD</p>
+            <% subTotal += product.price * quantity %>
+       <% }) %>
+       <p>Quantity: <%= order.quantity %></p>
+       <p>SubTotal: <%= subTotal %> BD</p>
+       <% totalPrice+=subTotal %>
+        <p>Total Price: <%= totalPrice %> BD</p>
+        <hr>
+    <% }) %>
+</body>
+</html>

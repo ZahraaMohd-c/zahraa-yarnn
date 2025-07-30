@@ -6,7 +6,27 @@
     <title>Zahraa Yarnn</title>
 </head>
 <body>
+    <%- include('../partials/navbar') %>
     <h1>Add Order </h1>
-    
+    <p>Product: <%= foundProduct.productName %></p>
+    <p>Price: <%= foundProduct.price %> BD</p>
+    <form action="/orders/<%= foundProduct._id %>" method="post">
+       <div>
+            <label for="quantity">Quantity:</label>
+            <select id="quantity" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <button type="submit">Add Order</button>
+    </form>
 </body>
 </html>
