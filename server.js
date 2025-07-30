@@ -11,6 +11,7 @@ const isSignedIn = require('./middleware/isSignedIn')
 const productsRoutes = require('./routes/products.routes')
 const ordersRoutes = require('./routes/orders.routes')
 const isAdmin = require('./middleware/isAdmin')
+const cartRouter = require('./routes/cart.routes')
 
 // Middleware
 app.use(express.static('public')); //all static files are in the public folder
@@ -36,6 +37,7 @@ app.use('/auth', authRoutes)
 app.use(isSignedIn)
 app.use('/orders',ordersRoutes)
 app.use('/products',productsRoutes)
+app.use('/cart',cartRouter)
 // app.use(isAdmin)
 
 
