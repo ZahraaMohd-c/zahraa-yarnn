@@ -7,9 +7,13 @@
 </head>
 <body>
     <%- include('../partials/navbar') %>
-    <h1>Orders</h1>
-    <hr>
-    <% allOrders.forEach(order => { %>
+
+    <% if(userFull.role === 'admin') { %>
+        <h1>All Orders</h1>
+        <% allOrders.forEach(order => { %>
+        <p>Order ID: <%= order._id %></p>
+        <p>Order Date: <%= order.createdAt.toLocaleDateString() %></p>
+        <p>Customer: <%= order.user.username %></p>
        <% let total = 0; %>
        <% order.products.forEach(item => { %>
             <p>Product Name: <%= item.product.productName %></p>
@@ -20,5 +24,25 @@
         <p>Total: <%= total %> BD</p>
         <hr>
     <% }); %>
+    <% } else { %>
+        <h1>Your Orders</h1>
+        <% allOrders.forEach(order => { %>
+            <% if(order.user._id.toString() === userFull._id.toString()) { %>
+                <p>Order ID: <%= order._id %></p>
+                <p>Order Date: <%= order.createdAt.toLocaleDateString() %></p>
+               <% let total = 0; %>
+               <% order.products.forEach(item => { %>
+                    <p>Product Name: <%= item.product.productName %></p>
+                    <p>Price: <%= item.product.price %> BD</p>
+                    <p>Quantity: <%= item.quantity %></p>
+                    <% total += item.product.price * item.quantity; %>
+                <% }); %>
+                <p>Total: <%= total %> BD</p>
+                <hr>
+            <% } %>
+        <% }); %>
+    <% } %>
+    
+    
 </body>
 </html>

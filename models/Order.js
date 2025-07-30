@@ -17,14 +17,11 @@ const orderSchema = new mongoose.Schema({
         ref: 'User',
         required: [true, 'User is required']
     },
-    orderDate: {
-        type: Date,
-        default: Date.now
-    },
+    
     totalPrice: Number,
     notes: String
     
-})
+},{timestamps:true})
 
 const Order = mongoose.model('Order', orderSchema)
 module.exports= Order

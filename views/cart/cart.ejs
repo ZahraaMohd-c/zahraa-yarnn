@@ -12,12 +12,11 @@
   <p>Product: <%= item.productName %> | Quantity: <%= item.quantity %> | Price: <%= item.price %> BD | Total: <%= item.price * item.quantity %> BD</p>
   <form action="/cart/update/<%= item.productId %>?_method=PUT" method="post">
       <label for="quantity">Quantity:</label>
-      <select id="quantity" name="quantity">
+      <select id="quantity" name="quantity" onchange="this.form.submit()">
           <% for (let i = 1; i <= 10; i++) { %>
               <option value="<%= i %>" <%= item.quantity == i ? 'selected' : '' %>><%= i %></option>
           <% } %>
       </select>
-      <button type="submit">Update</button>
 
   </form>
   <form action="/cart/remove/<%= item.productId %>" method="post">

@@ -5,8 +5,10 @@ const User = require('../models/User')
 
 router.get('/', async (req,res) => {
     try{
-        const allOrders = await Order.find().populate('products.product')
-        res.render('orders/orders-page.ejs',{allOrders})
+        const allOrders = await Order.find().populate('products.product').populate('user')
+        const user = res.locals.user || req.user;
+        const userFull = await User.findById(user)
+        res.render('orders/orders-page.ejs',{allOrders,userFull})
 
 
     }
@@ -44,8 +46,7 @@ router.post('/checkout', async (req, res) => {
 
         const orderData = {
             products,
-            user: user._id || user,
-            orderDate: Date.now()
+            user: user._id || user
         };
 
         await Order.create(orderData);
