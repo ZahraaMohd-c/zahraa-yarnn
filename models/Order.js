@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 
 
 const orderSchema = new mongoose.Schema({
-    prodect: {
+    prodect: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product',
         required: [true, 'Product is required']
-    },
+    }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',

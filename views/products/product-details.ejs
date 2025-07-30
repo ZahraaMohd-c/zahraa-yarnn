@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahraa Yarnn</title>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <h1>Product Details</h1>
+    <p>Product Name: <%= foundProduct.productName %></p>
+    <p>Price: <%= foundProduct.price %></p>
+    <p>Description: <%= foundProduct.description %></p>
+
+   
+    <% if ( userRole.role === 'admin') { %>
+      <a href="/products/<%= foundProduct._id  %>/edit">Update</a>
+    <% } %>
+    
+</body>
+</html>

@@ -33,8 +33,9 @@ conntectToDB()
 
 
 app.use('/auth', authRoutes)
-// app.use(isSignedIn)
+app.use(isSignedIn)
 app.use('/orders',ordersRoutes)
+// app.use(isAdmin)
 
 app.use('/products',productsRoutes)
 
