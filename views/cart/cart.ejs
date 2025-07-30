@@ -25,7 +25,9 @@
   </form>
 <% }) %>
 <form action="/orders/checkout" method="post">
-  <button type="submit">Place Order</button>
+    <label for="notes">Note:</label>
+    <textarea id="notes" name="notes" placeholder="Add a note.."></textarea>
+    <button type="submit">Place Order</button>
 </form>
 
 </body>

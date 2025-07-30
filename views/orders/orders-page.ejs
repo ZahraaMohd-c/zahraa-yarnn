@@ -21,7 +21,11 @@
             <p>Quantity: <%= item.quantity %></p>
             <% total += item.product.price * item.quantity; %>
         <% }); %>
-        <p>Total: <%= total %> BD</p>
+        <p>Total Price: <%= total %> BD</p>
+        <p>Notes: <%= order.notes || 'No notes provided' %></p>
+        <form action="/orders/<%= order._id %>?_method=DELETE" method="post">
+            <button type="submit">Delete Order</button>
+        </form>
         <hr>
     <% }); %>
     <% } else { %>

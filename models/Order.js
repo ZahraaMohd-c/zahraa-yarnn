@@ -17,8 +17,6 @@ const orderSchema = new mongoose.Schema({
         ref: 'User',
         required: [true, 'User is required']
     },
-    
-    totalPrice: Number,
     notes: String
     
 },{timestamps:true})

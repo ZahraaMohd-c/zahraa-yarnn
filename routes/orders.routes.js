@@ -34,6 +34,7 @@ router.get('/:productId', async(req,res) => {
 router.post('/checkout', async (req, res) => {
     try {
         const user = res.locals.user || req.user;
+        const notes =req.body.notes || ''
         const cartItems = req.session.cart || [];
         if (cartItems.length === 0) {
             return res.send('Cart is empty');
@@ -42,12 +43,13 @@ router.post('/checkout', async (req, res) => {
         const products = cartItems.map(item => ({
             product: item.product,
             quantity: item.quantity
-        }));
+        }))
 
         const orderData = {
             products,
-            user: user._id || user
-        };
+            user: user._id || user,
+            notes
+        }
 
         await Order.create(orderData);
         req.session.cart = [];
@@ -56,7 +58,18 @@ router.post('/checkout', async (req, res) => {
         console.log(error);
         res.send('Order creation failed');
     }
-});
+})
+
+router.delete('/:orderId', async (req,res)=> {
+    try{
+        const deletedOrder = await Order.findByIdAndDelete(req.params.orderId)
+        res.redirect('/orders')
+
+    }
+    catch(error){
+        console.log(error)
+    }
+})
 
 
 module.exports = router
