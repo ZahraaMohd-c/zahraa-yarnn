@@ -12,11 +12,19 @@
     <p>Price: <%= foundProduct.price %></p>
     <p>Description: <%= foundProduct.description %></p>
 
+    <form action="/cart/add/<%= foundProduct._id %>" method="post">
+        <label for="quantity">Quantity:</label>
+        <select id="quantity" name="quantity">
+            <% for (let i = 1; i <= 10; i++) { %>
+                <option value="<%= i %>"><%= i %></option>
+            <% } %>
+        </select>
+        <button type="submit">Add to Cart</button>
+    </form>
    
     <% if ( userRole.role === 'admin') { %>
       <a href="/products/<%= foundProduct._id  %>/edit">Update</a>
     <% } %>
-    <a href="/orders/<%= foundProduct._id %>">Order</a>
 
 </body>
 </html>

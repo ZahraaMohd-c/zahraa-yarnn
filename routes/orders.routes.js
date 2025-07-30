@@ -3,6 +3,17 @@ const Order = require('../models/Order')
 const Product = require('../models/product')
 const User = require('../models/User')
 
+router.get('/', async (req,res) => {
+    try{
+        const allOrders = await Order.find().populate('products.product')
+        res.render('orders/orders-page.ejs',{allOrders})
+
+
+    }
+    catch(error){
+        console.log(error)
+    }
+})
 router.get('/:productId', async(req,res) => {
     try{
         const foundProduct = await Product.findById(req.params.productId)
@@ -17,36 +28,34 @@ router.get('/:productId', async(req,res) => {
     
 })
 
-router.post('/:productId', async(req, res) => {
-   try {
+// Checkout route: create order from cart
+router.post('/checkout', async (req, res) => {
+    try {
         const user = res.locals.user || req.user;
-        const product = await Product.findById(req.params.productId);
-        
+        const cartItems = req.session.cart || [];
+        if (cartItems.length === 0) {
+            return res.send('Cart is empty');
+        }
+        // Build products array for order
+        const products = cartItems.map(item => ({
+            product: item.product,
+            quantity: item.quantity
+        }));
+
         const orderData = {
-            products: [product._id],
-            user: user._id || user,  
-            quantity: req.body.quantity,
+            products,
+            user: user._id || user,
             orderDate: Date.now()
         };
 
-        const createOrder = await Order.create(orderData);
-        res.redirect('/products');
+        await Order.create(orderData);
+        req.session.cart = [];
+        res.redirect('/orders');
+    } catch (error) {
+        console.log(error);
+        res.send('Order creation failed');
     }
-    catch(error){
-        console.log(error)
-    }
-})
+});
 
-router.get('/', async (req,res) => {
-    try{
-        const allOrders = await Order.find().populate('products')
-        res.render('orders/orders-page.ejs',{allOrders})
-
-
-    }
-    catch(error){
-        console.log(error)
-    }
-})
 
 module.exports = router

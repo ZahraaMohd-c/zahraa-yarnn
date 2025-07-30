@@ -9,20 +9,16 @@
     <%- include('../partials/navbar') %>
     <h1>Orders</h1>
     <hr>
-    <% let totalPrice=0 %>
-    <p><% allOrders.forEach(order => { %>
-        <% const quantity = Number(order.quantity) %>
-        <% let subTotal= 0 %>
-        <% order.products.forEach(product => { %>
-            <p>Product Name: <%= product.productName %></p>
-            <p>Price: <%= product.price %> BD</p>
-            <% subTotal += product.price * quantity %>
-       <% }) %>
-       <p>Quantity: <%= order.quantity %></p>
-       <p>SubTotal: <%= subTotal %> BD</p>
-       <% totalPrice+=subTotal %>
-        <p>Total Price: <%= totalPrice %> BD</p>
+    <% allOrders.forEach(order => { %>
+       <% let total = 0; %>
+       <% order.products.forEach(item => { %>
+            <p>Product Name: <%= item.product.productName %></p>
+            <p>Price: <%= item.product.price %> BD</p>
+            <p>Quantity: <%= item.quantity %></p>
+            <% total += item.product.price * item.quantity; %>
+        <% }); %>
+        <p>Total: <%= total %> BD</p>
         <hr>
-    <% }) %>
+    <% }); %>
 </body>
 </html>
