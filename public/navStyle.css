@@ -1,55 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
-.navbar-brand{
-    font-family: "Abril Fatface", serif;
-    color:#5f5245;
-    font-size: 25px;
-    
-    
+body {
+    background-color: #FDF7F2;
+    margin: 0;
 }
-body{
-     background-color: #F4F1EA;
-     margin:0;
+.navbar-brand {
+    font-family: "Abril Fatface", serif;
+    color: #9A8C82;
+    font-size: 25px;
 }
 
+
 nav {
-    /* color: #F3DBB2; */
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #CBB9A4;
-    border-bottom: 2px solid #897765; /* or any color/thickness you prefer */
-
-    
+    background-color: rgb(251, 249, 249);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
 }
 
-nav a{
+nav a {
     color: #5f5245;
     text-decoration: none;
     padding: 10px 15px;
-    
-    
+    font-weight: bold;
+
 }
+
 nav p {
     margin: 0;
-    padding: 10px 15px;
-    
+    padding: 5px 15px;
+
 }
 
 nav a:hover {
-   color:#F2F2F2;
+    color: #F2F2F2;
 }
 
-#nav-before-login{
+#nav-before-login {
     float: right;
 
 }
 
-#nav-login{
+#nav-login {
     float: right;
     display: flex;
     flex-wrap: nowrap;
 
 
+}
+
+#nav-login a {
+    margin-left: 10px;
+}
+#nav-login a:hover {
+    background-color: #897765;
+    color: #F2F2F2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 20px;
+    }
+
+    #nav-login,
+    #nav-before-login {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 8px 0;
+    }
 }

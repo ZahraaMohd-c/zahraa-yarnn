@@ -13,11 +13,6 @@
         <p> <%= product.productName %></p>
         <p>Price: <%= product.price %> BD</p>
         <a href="/products/<%= product._id  %>">details</a>
-        <% if (userRole.role === 'admin') { %>
-            <form action="/products/<%= product._id  %>?_method=DELETE" method="post">
-                <button type="submit">Delete</button>
-            </form>
-        <% } %>
         <% }) %>
 
 </body>
