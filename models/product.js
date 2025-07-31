@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema({
         required: [true, 'The price is required ']
     },
     description: String,
-    imageUrl: String
+    image: String
 })
 
 const Product = mongoose.model('Product', productSchema)

@@ -1,6 +1,6 @@
 const cloudinary =require('cloudinary').v2
-const multer = require('multer');
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const multer = require('multer')
+const { CloudinaryStorage } = require('multer-storage-cloudinary')
 
 
 cloudinary.config({
@@ -9,17 +9,25 @@ cloudinary.config({
     api_secret: process.env.API_SECRET
 });
 
-const storage = new CloudinaryStorage({
-    cloudinary : cloudinary,
-     params: async (req, file) => {
-      return {
-        folder: 'zahraa-yarnn',
-        allowed_formats: ['jpg', 'jpeg', 'png'],
-        transformation: [{ width: 500, height: 500, crop: 'limit' }]
-      }
-    }
-});
+function multerSetup(){
 
-const upload = multer({storage})
+    const storage = new CloudinaryStorage({
+        cloudinary : cloudinary,
+         params: async (req, file) => {
+          return {
+            folder: 'products-images',
+            allowed_formats: ['jpg', 'jpeg', 'png'],
+            transformation: [{ width: 500, height: 500, crop: 'limit' }],
+            public_id: file.originalname.split('.')[0]+ '-'+Date.now()
+          }
+        }
+    })
+    return multer({ storage})
+}
 
-module.exports = {cloudinary, upload}
+
+// const upload = multer({storage})
+console.log("Cloudinary configured for cloud:", cloudinary.config().cloud_name);
+
+
+module.exports = {cloudinary, multerSetup}

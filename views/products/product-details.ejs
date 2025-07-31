@@ -25,6 +25,9 @@
     <% if ( userRole.role === 'admin') { %>
       <a href="/products/<%= foundProduct._id  %>/edit">Update</a>
     <% } %>
+    <form action="/products/<%= foundProduct._id  %>?_method=delete" method="post">
+        <button type="submit">Delete</button>
+    </form>
 
 </body>
 </html>

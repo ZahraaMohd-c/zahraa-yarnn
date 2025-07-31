@@ -9,12 +9,16 @@
     <%- include('../partials/navbar') %>
     <h1>All products</h1>
     <% allProducts.forEach(product => { %>
-        <p>Product Name: <%= product.productName %></p>
+        <img src="<%= product.image %>" alt="Product Image" style="max-width:150px;">
+        <p> <%= product.productName %></p>
         <p>Price: <%= product.price %> BD</p>
         <a href="/products/<%= product._id  %>">details</a>
-        <hr>
+        <% if (userRole.role === 'admin') { %>
+            <form action="/products/<%= product._id  %>?_method=DELETE" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        <% } %>
+        <% }) %>
 
-   <% }) %>
-    
 </body>
 </html>

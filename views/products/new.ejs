@@ -8,7 +8,7 @@
 <body>
     <%- include('../partials/navbar') %>
     <h1>Create A product</h1>
-    <form action="/products" method="post">
+    <form action="/products" method="post" enctype="multipart/form-data">
         <div>
         <label for="productName">Product Name </label>
         <input type="text" name="productName" id="productName">
@@ -22,8 +22,8 @@
         <textarea name="description" id="description"></textarea>
         </div>
         <div>
-            <label for="imageUrl">Product Image</label>
-            <input type="file" name="imageUrl" id="imageUrl">
+            <label for="image">Product Image</label>
+            <input type="file" name="image" id="image">
         </div>
         <div>
             <button type="submit">Create</button>
