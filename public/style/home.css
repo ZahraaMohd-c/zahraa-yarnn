@@ -1,0 +1,38 @@
+.home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 70px; */
+    height: 85vh;
+    /* background-image: url('/assets/flowerBlanket1.jpg'); */
+    /* background-size: cover;     */
+    /* background-position: center;  */
+    /* background-repeat: no-repeat;  */
+    /* background-attachment: fixed; */
+    /* background-color: rgba(205, 202, 202, 0.5);  */
+    /* background-blend-mode: lighten;  */
+}
+
+.home-page h1,p{
+    color:#5f5245;
+}
+
+.home-page p{
+    font-size: larger;
+}
+.home-page button{
+    padding: 8px 18px;
+    background-color: #897765;
+    color: #F2F2F2;
+    border: none;
+    /* border-radius: 40px; */
+    cursor: pointer;
+    font-size: 1em;
+
+}
+.home-page button:hover{
+    background-color:#ccc;
+}
+
+    
