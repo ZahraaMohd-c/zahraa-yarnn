@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="/login.css">
 </head>
 <body>
     <%- include('../partials/navbar') %>
-    <h1>Login</h1>
+    <div class="login-page">
+    <h1 id="login">Login</h1>
     
-
     <form action="/auth/login" method="post">
         <div>
             <label for="username">Username:</label>
@@ -27,6 +28,7 @@
         
 
     </form>
+    </div>
     
 </body>
 </html>

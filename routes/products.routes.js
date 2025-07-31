@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const Product = require('../models/product')
 const User = require('../models/User')
+const {cloudinary , upload } = require("../config/cloudinary")
 
 router.get('/', async (req,res) => {
     try{
@@ -16,10 +17,20 @@ router.get('/new',(req,res) =>{
     res.render('products/new.ejs')
 })
 
-router.post('/', async (req,res) => {
+
+router.post('/', upload.single("imageUrl") ,async (req,res) => {
     try{
-        const createdProduct = await Product.create(req.body)
-        res.redirect('/allproducts')
+        const {productName, price, description} = req.body
+
+        const newProduct = new Product({
+            productName,
+            price,
+            description,
+            imageUrl : req.file?.path || null
+        })
+
+        await newProduct.save()
+        res.redirect('/products')
 
     }
     catch(error){

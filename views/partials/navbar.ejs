@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/navStyle.css">
     <title>Zahraa Yarnn</title>
 </head>
 <body>
     <nav>
+        <p class="navbar-brand">Zahraa Yarnn</p>
         <% if (user){ %>
+            <div id="nav-login">
+                <a href="/">Home</a>
+                <a href="/products">Products</a>
+                <a href="/cart">Cart</a>
+                <a href="/orders">Orders</a>
+                <a href="/auth/logout">Logout</a>
 
-            <%= user.username %>
-            <a href="/">Home</a>
-            <a href="/products">Products</a>
-            <a href="/cart">Cart</a>
-            <a href="/orders">Orders</a>
-            <a href="/auth/logout">Logout</a>
-   
-    <%} else{ %>
-    <a href="/auth/login">Login</a>
-    <a href="/auth/sign-up">Sign Up</a>
-
-    <%} %>
-        
+            </div>
+        <%} else{ %>
+            <div id="nav-before-login">
+                <a href="/auth/login">Login</a>
+            <a href="/auth/sign-up">Sign Up</a>
+            </div>
+            
+        <%} %>
     </nav>
-    
 </body>
 </html>

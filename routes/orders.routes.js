@@ -39,7 +39,7 @@ router.post('/checkout', async (req, res) => {
         if (cartItems.length === 0) {
             return res.send('Cart is empty');
         }
-        // Build products array for order
+
         const products = cartItems.map(item => ({
             product: item.product,
             quantity: item.quantity

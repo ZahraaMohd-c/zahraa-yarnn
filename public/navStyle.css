@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+.navbar-brand{
+    font-family: "Abril Fatface", serif;
+    color:#5f5245;
+    font-size: 25px;
+    
+    
+}
+body{
+     background-color: #F4F1EA;
+     margin:0;
+}
+
+nav {
+    /* color: #F3DBB2; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CBB9A4;
+    border-bottom: 2px solid #897765; /* or any color/thickness you prefer */
+
+    
+}
+
+nav a{
+    color: #5f5245;
+    text-decoration: none;
+    padding: 10px 15px;
+    
+    
+}
+nav p {
+    margin: 0;
+    padding: 10px 15px;
+    
+}
+
+nav a:hover {
+   color:#F2F2F2;
+}
+
+#nav-before-login{
+    float: right;
+
+}
+
+#nav-login{
+    float: right;
+    display: flex;
+    flex-wrap: nowrap;
+
+
+}
