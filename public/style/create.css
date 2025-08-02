@@ -62,21 +62,14 @@ button:hover {
 
 
 /* all prroducts page style */
-body {
-    font-family: "Poppins", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f6;
-    color: #333;
-}
 
 .top-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    /* background: #fff; */
+    /* box-shadow: 0 2px 6px rgba(0,0,0,0.08); */
 }
 
 .top-title h1 {
@@ -87,7 +80,7 @@ body {
 
 .top-title form button {
     padding: 10px 20px;
-    background: #6b705c;
+    background-color: #6b705c;
     border: none;
     border-radius: 8px;
     color: white;
@@ -101,14 +94,15 @@ body {
 }
 
 .allProducts-page {
-    display: flex;
-    /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 30px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
-    flex-wrap: wrap;
+    justify-items: center; /* center items in their grid cell */
 }
+
 
 .product-card {
     background: #fff;

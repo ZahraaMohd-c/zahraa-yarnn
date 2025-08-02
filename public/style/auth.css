@@ -1,6 +1,6 @@
 /* sign up style */
 body{
-    background-color:  #f1faee;
+    background-color:  #f9f9f6;
 }
 
 .sign-up-page{
@@ -9,7 +9,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 90vh;
-    color: #457b9d;
+    color: #3b3b3b;
     font-family: Arial, sans-serif;
 
 }
@@ -28,7 +28,7 @@ body{
     font-size: 1em;
 }
 .input-field input:hover{
-    background-color:  #a8dadc;
+    background-color:  #c0c5b4;
 }
 .button-container {
     display: flex;
@@ -37,7 +37,7 @@ body{
 }
 .button-container button {
     padding: 8px 18px;
-    background-color: #457b9d;
+    background-color: #6b705c;
     color: #F2F2F2;
     border: none;
     border-radius: 40px;
@@ -45,14 +45,14 @@ body{
     font-size: 1em;
 }
 .button-container button:hover {
-    background-color:#ccc;
+    background-color:#5a5f4d;
 }
 #login-link{
-    color:  #1d3557;
+    color:  #333;
 
 }
 #login-link:hover{
-    color: #ccc;
+    color: #5a5f4d;
 }
 
 /* login style */
@@ -64,7 +64,7 @@ body{
     justify-content: center;
     height: 75vh;
     /* background-color: #FDF7F2; */
-    color: #457b9d;
+    color: #3b3b3b;
     font-family: Arial, sans-serif;
 
 }

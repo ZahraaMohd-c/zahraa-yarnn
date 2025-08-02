@@ -15,7 +15,7 @@
 }
 
 .home-page h1,p{
-    color:#1d3557;
+    color:#3b3b3b;
 }
 
 .home-page p{
@@ -23,16 +23,16 @@
 }
 .home-page button{
     padding: 8px 18px;
-    background-color: #457b9d;
-    color: #F2F2F2;
+    background-color: #6b705c;
+    color: #f9f9f6;
     border: none;
-    /* border-radius: 40px; */
+    border-radius: 40px;
     cursor: pointer;
     font-size: 1em;
 
 }
 .home-page button:hover{
-    background-color:#ccc;
+    background-color:#5a5f4d;
 }
 
     
