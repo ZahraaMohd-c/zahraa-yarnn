@@ -7,7 +7,9 @@ const upload = multerSetup()
 router.get('/', async (req,res) => {
     try{
         const allProducts = await Product.find()
-        res.render('products/all-products.ejs',{allProducts})
+        const user = res.locals.user || req.user;
+        const userRole = await User.findById(user._id)
+        res.render('products/all-products.ejs',{allProducts,userRole})
     }
     catch(error){
         console.log(error)

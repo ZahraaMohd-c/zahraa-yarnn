@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zahraa Yarnn</title>
+    <link rel="stylesheet" href="/style/create.css">
 </head>
+
 <body>
     <%- include('../partials/navbar') %>
+    <div class="top-title">
     <h1>All products</h1>
-    <% allProducts.forEach(product => { %>
-        <img src="<%= product.image %>" alt="Product Image" style="max-width:150px;">
-        <p> <%= product.productName %></p>
-        <p>Price: <%= product.price %> BD</p>
-        <a href="/products/<%= product._id  %>">details</a>
-        <% }) %>
-
+    <% if(userRole.role==='admin' ) {%>
+        <form action="products/new" method="get">
+            <button>Add product</button>
+        </form>
+        <% } %>
+    </div>    
+        <div class="allProducts-page">
+                    <% allProducts.forEach(product=> { %>
+                      <div class="product-card">
+                        <img src="<%= product.image %>" alt="Product Image" style="max-width:150px;">
+                        <p><strong><%= product.productName %></strong></p>
+                        <p>Price: <%= product.price %> BD</p>
+                        <a href="/products/<%= product._id  %>"> View Details</a>
+                      </div>
+                        <% }) %>
+        </div>
 </body>
+
 </html>

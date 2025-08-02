@@ -5,17 +5,17 @@
     align-items: center;
     /* margin-top: 70px; */
     height: 85vh;
-    /* background-image: url('/assets/flowerBlanket1.jpg'); */
-    /* background-size: cover;     */
-    /* background-position: center;  */
-    /* background-repeat: no-repeat;  */
-    /* background-attachment: fixed; */
-    /* background-color: rgba(205, 202, 202, 0.5);  */
-    /* background-blend-mode: lighten;  */
+    /* background-image: url('/assets/flowerBlanket7.jpg');
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-color: rgba(205, 202, 202, 0.5); 
+    background-blend-mode: lighten;  */
 }
 
 .home-page h1,p{
-    color:#5f5245;
+    color:#1d3557;
 }
 
 .home-page p{
@@ -23,7 +23,7 @@
 }
 .home-page button{
     padding: 8px 18px;
-    background-color: #897765;
+    background-color: #457b9d;
     color: #F2F2F2;
     border: none;
     /* border-radius: 40px; */

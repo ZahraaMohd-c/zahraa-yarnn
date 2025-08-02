@@ -1,13 +1,15 @@
 /* sign up style */
+body{
+    background-color:  #f1faee;
+}
 
 .sign-up-page{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh;
-    /* background-color: #FDF7F2; */
-    color: #9A8C82;
+    height: 90vh;
+    color: #457b9d;
     font-family: Arial, sans-serif;
 
 }
@@ -17,7 +19,7 @@
 }
 .input-field input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background: transparent;
@@ -26,7 +28,7 @@
     font-size: 1em;
 }
 .input-field input:hover{
-    background-color: #9A8C82;
+    background-color:  #a8dadc;
 }
 .button-container {
     display: flex;
@@ -35,7 +37,7 @@
 }
 .button-container button {
     padding: 8px 18px;
-    background-color: #897765;
+    background-color: #457b9d;
     color: #F2F2F2;
     border: none;
     border-radius: 40px;
@@ -46,7 +48,7 @@
     background-color:#ccc;
 }
 #login-link{
-    color: #897765;
+    color:  #1d3557;
 
 }
 #login-link:hover{
@@ -60,9 +62,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 55vh;
+    height: 75vh;
     /* background-color: #FDF7F2; */
-    color: #9A8C82;
+    color: #457b9d;
     font-family: Arial, sans-serif;
 
 }

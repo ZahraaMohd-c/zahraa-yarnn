@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 body {
-    background-color: #FDF7F2;
+    background-color: #f1faee;
     margin: 0;
+    font-family: "Lato", sans-serif;
+
 }
 .navbar-brand {
     font-family: "Abril Fatface", serif;
@@ -16,17 +19,19 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FDF7F2;
+    background-color: #f1faee;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
 nav a {
-    color: #5f5245;
+    color: #457b9d;
     text-decoration: none;
     padding: 10px 15px;
     font-weight: bold;
+    font-size: 15px;
+
 
 }
 
@@ -55,9 +60,10 @@ nav a:hover {
 
 #nav-login a {
     margin-left: 10px;
+    
 }
 #nav-login a:hover {
-    background-color: #897765;
+    background-color: #1d3557;
     color: #F2F2F2;
 }
 

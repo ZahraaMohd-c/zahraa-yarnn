@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zahraa Yarnn</title>
+    <link rel="stylesheet" href="/style/create.css">
+
 </head>
+
 <body>
     <%- include('../partials/navbar') %>
-    <h1>Create A product</h1>
-    <form action="/products" method="post" enctype="multipart/form-data">
-        <div>
-        <label for="productName">Product Name </label>
-        <input type="text" name="productName" id="productName">
-        </div>
-        <div>
-        <label for="price">Price </label>
-        <input type="number" name="price" id="price">
-        </div>
-        <div>
-        <label for="description">Description </label>
-        <textarea name="description" id="description"></textarea>
-        </div>
-        <div>
-            <label for="image">Product Image</label>
-            <input type="file" name="image" id="image">
-        </div>
-        <div>
-            <button type="submit">Create</button>
-        </div>
+        <div class="newProduct-page">
+            <h1>Create A product</h1>
+            <form action="/products" method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="productName">Product Name </label>
+                    <input type="text" name="productName" id="productName">
+                </div>
+                <div>
+                    <label for="price">Price </label>
+                    <input type="number" name="price" id="price">
+                </div>
+                <div>
+                    <label for="description">Description </label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <div>
+                    <label for="image">Product Image</label>
+                    <input type="file" name="image" id="image">
+                </div>
+                <div>
+                    <button type="submit">Create</button>
+                </div>
 
-    </form>
-    
+            </form>
+        </div>
 </body>
+
 </html>
