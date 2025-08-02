@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style/create.css">
 </head>
+
 <body>
     <%- include('../partials/navbar') %>
-    <h1>Update Product</h1>
-    <form action="/products/<%= foundProduct._id  %>?_method=put" method="post">
-        <div>
-        <label for="productName">Product Name </label>
-        <input value="<%= foundProduct.productName  %>" type="text" name="productName" id="productName">
-        </div>
-        <div>
-        <label for="price">Price </label>
-        <input value="<%= foundProduct.price  %>" type="number" name="price" id="price">
-        </div>
-        <div>
-        <label for="description">Description </label>
-        <textarea value="<%= foundProduct.description %>" name="description" id="description"></textarea>
-        </div>
-        <div>
-            <button type="submit">Update</button>
+    <div class="newProduct-page">
+            <h1>Update Product</h1>
+            <form action="/products/<%= foundProduct._id  %>?_method=put" method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="productName">Product Name </label>
+                    <input value="<%= foundProduct.productName  %>" type="text" name="productName" id="productName">
+                </div>
+                <div>
+                    <label for="price">Price </label>
+                    <input value="<%= foundProduct.price  %>" type="number" name="price" id="price">
+                </div>
+                <div>
+                    <label for="description">Description </label>
+                    <textarea value="<%= foundProduct.description %>" name="description" id="description"></textarea>
+                </div>
+                <div>
+                    <label for="image">Product Image</label>
+                    <input type="file" name="image" id="image">
+                </div>
+
+                <div>
+                    <button type="submit">Update</button>
+                </div>
+
+
+            </form>
         </div>
 
-    
-    </form>
-    
 </body>
+
 </html>

@@ -8,9 +8,10 @@
 <body>
     <%- include('../partials/navbar') %>
     <h1>Product Details</h1>
-    <p>Product Name: <%= foundProduct.productName %></p>
+    <img src="<%= foundProduct.image %>" alt="Product Image" style="max-width:150px;">
+    <p><strong><%= foundProduct.productName %></strong> </p>
     <p>Price: <%= foundProduct.price %></p>
-    <p>Description: <%= foundProduct.description %></p>
+    <p><%= foundProduct.description %></p>
 
     <form action="/cart/add/<%= foundProduct._id %>" method="post">
         <label for="quantity">Quantity:</label>

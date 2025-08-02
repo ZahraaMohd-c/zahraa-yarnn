@@ -65,7 +65,7 @@ router.get('/:id/edit', async (req,res) => {
     }
 })
 
-router.put('/:id', async (req,res) => {
+router.put('/:id',upload.single("image"), async (req,res) => {
     try{
         const updateProduct = await Product.findByIdAndUpdate(req.params.id, req.body)
         res.redirect('/products')
@@ -76,7 +76,7 @@ router.put('/:id', async (req,res) => {
     }
 })
 
-router.delete('/:id', async (req,res) => {
+router.delete('/:id',upload.single("image"), async (req,res) => {
     try{
         const deleteProduct = await Product.findByIdAndUpdate(req.params.id)
         res.redirect('/products')
