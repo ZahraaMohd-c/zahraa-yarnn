@@ -68,13 +68,11 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    /* background: #fff; */
-    /* box-shadow: 0 2px 6px rgba(0,0,0,0.08); */
 }
 
 .top-title h1 {
     font-size: 1.8rem;
-    margin: 0;
+    margin-left: 50px ;
     color: #0e391d;
 }
 
@@ -87,6 +85,7 @@ button:hover {
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
+    margin-right: 50px;
 }
 
 .top-title form button:hover {
@@ -132,7 +131,7 @@ button:hover {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 16px;
-    background: #6b705c;
+    background: #0e391d;
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
@@ -141,6 +140,6 @@ button:hover {
 }
 
 .product-card a:hover {
-    background:  #5a5f4d;
+    background:  #1a6936;
 }
 

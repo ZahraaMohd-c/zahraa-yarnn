@@ -28,12 +28,6 @@
   flex: 1;
 }
 
-.product-info h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #3b3b3b;
-}
-
 .product-info p {
   font-size: 1rem;
   margin: 12px 0;
@@ -42,7 +36,7 @@
 
 .product-info p strong {
   font-size: 1.2rem;
-  color: #2f302a;
+  color: #1a6936;
 }
 
 .product-info form {
@@ -71,7 +65,7 @@
 
 .product-info button, .product-info a {
   padding: 5px 20px;
-  background: #6b705c;
+  background: #1a6936;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -98,7 +92,7 @@
 .admin-actions a, 
 .admin-actions button {
   background: none;
-  color: #6b705c;
+  color: #1a6936;
   border: none;
   cursor: pointer;
   text-decoration: underline;
