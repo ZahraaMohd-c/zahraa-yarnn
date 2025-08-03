@@ -1,21 +1,21 @@
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
-    username : {
-        type: String, 
+    username: {
+        type: String,
         required: [true, 'Username is required '],
         unique: [true, 'username already taken please pick another username']
     },
-    password : {
+    password: {
         type: String,
         required: [true, 'Password is required ']
     },
-    phoneNumber:{
+    phoneNumber: {
         type: Number,
-        required: [,'Phone number is required for contact']
+        required: [, 'Phone number is required for contact']
     },
-    role:{
-        type: String ,
+    role: {
+        type: String,
         enum: ['customer', 'admin'],
         default: 'customer'
     }

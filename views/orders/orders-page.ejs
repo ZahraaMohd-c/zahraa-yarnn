@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zahraa Yarnn</title>
     <link rel="stylesheet" href="/style/orders.css">
 </head>
+
 <body>
     <%- include('../partials/navbar') %>
-    <% if(userFull.role === 'admin') { %>
-        <div class="top-title">
-            <h1>All Orders</h1> 
-        </div>
-        <% allOrders.forEach(order => { %>
-            <div class="order-page">
-        <p>Order ID: <%= order._id %></p>
-        <p>Order Date: <%= order.createdAt.toLocaleDateString() %></p>
-        <p>Customer: <%= order.user.username %></p>
-       <% let total = 0; %>
-       <% order.products.forEach(item => { %>
-            <p>Product Name: <%= item.product.productName %></p>
-            <p>Price: <%= item.product.price %> BD</p>
-            <p>Quantity: <%= item.quantity %></p>
-            <% total += item.product.price * item.quantity; %>
-        <% }); %>
-        <hr>
-        <p>Total Price: <%= total %> BD</p>
-        <p>Notes: <%= order.notes || 'No notes provided' %></p>
-        <form action="/orders/<%= order._id %>?_method=DELETE" method="post">
-            <button type="submit">Delete Order</button>
-        </form>
-</div> 
-    <% }); %>
-    <% } else { %>
-        <div class="top-title">
-            <h1>Your Orders</h1>
-        </div>
-        <% allOrders.forEach(order => { %>
-            <% if(order.user._id.toString() === userFull._id.toString()) { %>
-                <div class="order-user">
-                <p>Order ID: <%= order._id %></p>
-                <p>Order Date: <%= order.createdAt.toLocaleDateString() %></p>
-               <% let total = 0; %>
-               <% order.products.forEach(item => { %>
-                    <p>Product Name: <%= item.product.productName %></p>
-                    <p>Price: <%= item.product.price %> BD</p>
-                    <p>Quantity: <%= item.quantity %></p>
-                    <% total += item.product.price * item.quantity; %>
+        <% if(userFull.role==='admin' ) { %>
+            <div class="top-title">
+                <h1>All Orders</h1>
+            </div>
+            <% allOrders.forEach(order=> { %>
+                <div class="order-page">
+                    <p>Order ID: <%= order._id %>
+                    </p>
+                    <p>Order Date: <%= order.createdAt.toLocaleDateString() %>
+                    </p>
+                    <p>Customer: <%= order.user.username %>
+                    </p>
+                    <% let total=0; %>
+                        <% order.products.forEach(item=> { %>
+                            <p>Product Name: <%= item.product.productName %>
+                            </p>
+                            <p>Price: <%= item.product.price %> BD</p>
+                            <p>Quantity: <%= item.quantity %>
+                            </p>
+                            <% total +=item.product.price * item.quantity; %>
+                                <% }); %>
+                                    <hr>
+                                    <p>Total Price: <%= total %> BD</p>
+                                    <p>Notes: <%= order.notes || 'No notes provided' %>
+                                    </p>
+                                    <form action="/orders/<%= order._id %>?_method=DELETE" method="post">
+                                        <button type="submit">Delete Order</button>
+                                    </form>
+                </div>
                 <% }); %>
-                <p>Total: <%= total %> BD</p>
-            <% } %>
-        </div>
-        <% }); %>
-    <% } %>
+                    <% } else { %>
+                        <div class="top-title">
+                            <h1>Your Orders</h1>
+                        </div>
+                        <% allOrders.forEach(order=> { %>
+                            <% if(order.user._id.toString()===userFull._id.toString()) { %>
+                                <div class="order-user">
+                                    <p>Order ID: <%= order._id %>
+                                    </p>
+                                    <p>Order Date: <%= order.createdAt.toLocaleDateString() %>
+                                    </p>
+                                    <% let total=0; %>
+                                        <% order.products.forEach(item=> { %>
+                                            <p>Product Name: <%= item.product.productName %>
+                                            </p>
+                                            <p>Price: <%= item.product.price %> BD</p>
+                                            <p>Quantity: <%= item.quantity %>
+                                            </p>
+                                            <% total +=item.product.price * item.quantity; %>
+                                                <% }); %>
+                                                    <p>Total: <%= total %> BD</p>
+                                                    <% } %>
+                                </div>
+                                <% }); %>
+                                    <% } %>
 
-    
+
 </body>
+
 </html>

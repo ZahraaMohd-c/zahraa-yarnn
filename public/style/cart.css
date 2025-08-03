@@ -11,20 +11,21 @@
     color: #0e391d;
 }
 
-.cart-content{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
+.cart-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
-.cart-item{
+
+.cart-item {
     background: #fff;
     border-radius: 12px;
-    box-shadow:  0 4px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width:100%;
+    width: 100%;
     max-width: 800px;
     display: flex;
     align-items: center;
@@ -32,63 +33,65 @@
     margin: 20px;
 
 }
+
 .cart-image {
     display: flex;
     justify-content: center;
     margin-left: 20px;
 }
 
-.cart-image img{
-     width: 150px;
-  max-width: 150px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  margin-left: 10px;
+.cart-image img {
+    width: 150px;
+    max-width: 150px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-left: 10px;
 }
 
 .item-info {
-   flex: 1;
-   display: flex;
-   flex-direction: column;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-forms {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 10px ;
+    margin-right: 10px;
 
 }
-button{
-  padding: 6px 20px;
-  background: #0e391d;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-  display: inline-block;
-  margin: 10px 5px;
+
+button {
+    padding: 6px 20px;
+    background: #0e391d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin: 10px 5px;
 }
 
-.cart-forms button:hover{
+.cart-forms button:hover {
     background-color: #5a5f4d;
 }
 
-.cart-forms select{
-  padding: 5px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-right: 15px;
-  outline: none;
-  transition: border 0.3s ease;
+.cart-forms select {
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-right: 15px;
+    outline: none;
+    transition: border 0.3s ease;
 }
 
-.checkout{
+.checkout {
     background: #fff;
     border-radius: 12px;
-    box-shadow:  0 4px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-left: 50px;
@@ -106,27 +109,31 @@ button{
     flex-direction: row;
     gap: 370px;
 }
-.checkout form textarea{
+
+.checkout form textarea {
     flex: 2;
 }
-.checkout button{
+
+.checkout button {
     flex: 1;
-  align-self: center;
+    align-self: center;
 }
+
 .right {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
-.checkout textarea{
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
-  transition: border 0.3s;
+.checkout textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
 }
+
 .right p {
     padding-top: 5px;
 }

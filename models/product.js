@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const productSchema = new mongoose.Schema({
     productName: {
         type: String,
-        required: [true, 'The product name is required']   
+        required: [true, 'The product name is required']
     },
     price: {
         type: Number,
@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
     },
     description: String,
     image: String,
-    imagePublicId : String
+    imagePublicId: String
 })
 
 const Product = mongoose.model('Product', productSchema)

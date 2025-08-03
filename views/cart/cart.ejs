@@ -15,45 +15,47 @@
         </div>
         <div class='cart-content'>
             <% let total=0 %>
-         <% cartItems.forEach(item=> { %>
-            <% let price= item.price * item.quantity %>
-            <div class="cart-item">
-                <div class="cart-image">
-                    <img src="<%= item.image %>" alt="Product Image" style="max-width:150px;">
-                </div>
-                <div class="item-info">
-                    <p>Product: <%= item.productName %> | Quantity: <%= item.quantity %> | Price: <%= item.price %> BD </p>
-                    <p>Total: <%=price%> BD</p>
-                    <% total+= price %>
-                    <div class="cart-forms">
-                        <form action="/cart/update/<%= item.productId %>?_method=PUT" method="post">
-                            <label for="quantity">Quantity:</label>
-                            <select id="quantity" name="quantity" onchange="this.form.submit()">
-                                <% for (let i=1; i <=10; i++) { %>
-                                    <option value="<%= i %>" <%=item.quantity==i ? 'selected' : '' %>><%= i %>
-                                    </option>
-                                    <% } %>
-                            </select>
-                        </form>
-                        <form action="/cart/remove/<%= item.productId %>" method="post">
-                            <button type="submit">Remove</button>
-        
-                        </form>
-                    </div>
+                <% cartItems.forEach(item=> { %>
+                    <% let price=item.price * item.quantity %>
+                        <div class="cart-item">
+                            <div class="cart-image">
+                                <img src="<%= item.image %>" alt="Product Image" style="max-width:150px;">
+                            </div>
+                            <div class="item-info">
+                                <p>Product: <%= item.productName %> | Quantity: <%= item.quantity %> | Price: <%=
+                                                item.price %> BD </p>
+                                <p>Total: <%=price%> BD</p>
+                                <% total+=price %>
+                                    <div class="cart-forms">
+                                        <form action="/cart/update/<%= item.productId %>?_method=PUT" method="post">
+                                            <label for="quantity">Quantity:</label>
+                                            <select id="quantity" name="quantity" onchange="this.form.submit()">
+                                                <% for (let i=1; i <=10; i++) { %>
+                                                    <option value="<%= i %>" <%=item.quantity==i ? 'selected' : '' %>>
+                                                        <%= i %>
+                                                    </option>
+                                                    <% } %>
+                                            </select>
+                                        </form>
+                                        <form action="/cart/remove/<%= item.productId %>" method="post">
+                                            <button type="submit">Remove</button>
 
-                </div>
-            </div>
+                                        </form>
+                                    </div>
 
-            <% }) %>
-            <div class="checkout">
-                <form action="/orders/checkout" method="post">
-                    <textarea id="notes" name="notes" placeholder="Add a note.."></textarea>
-                    <div class="right">
-                        <p class="total">Total price: <%= total %> BD</p>
-                        <button type="submit">Place Order</button>
-                    </div>
-                </form>
-            </div>
+                            </div>
+                        </div>
+
+                        <% }) %>
+                            <div class="checkout">
+                                <form action="/orders/checkout" method="post">
+                                    <textarea id="notes" name="notes" placeholder="Add a note.."></textarea>
+                                    <div class="right">
+                                        <p class="total">Total price: <%= total %> BD</p>
+                                        <button type="submit">Place Order</button>
+                                    </div>
+                                </form>
+                            </div>
         </div>
 </body>
 

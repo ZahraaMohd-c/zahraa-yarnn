@@ -10,23 +10,25 @@
 
 <body>
     <%- include('../partials/navbar') %>
-    <div class="top-title">
-    <h1>All products</h1>
-    <% if(userRole.role==='admin' ) {%>
-        <form action="products/new" method="get">
-            <button>Add product</button>
-        </form>
-        <% } %>
-    </div>    
+        <div class="top-title">
+            <h1>All products</h1>
+            <% if(userRole.role==='admin' ) {%>
+                <form action="products/new" method="get">
+                    <button>Add product</button>
+                </form>
+                <% } %>
+        </div>
         <div class="allProducts-page">
-                    <% allProducts.forEach(product=> { %>
-                      <div class="product-card">
-                        <img src="<%= product.image %>" alt="Product Image" style="max-width:270px;">
-                        <p><strong><%= product.productName %></strong></p>
-                        <p>Price: <%= product.price %> BD</p>
-                        <a href="/products/<%= product._id  %>"> View Details</a>
-                      </div>
-                        <% }) %>
+            <% allProducts.forEach(product=> { %>
+                <div class="product-card">
+                    <img src="<%= product.image %>" alt="Product Image" style="max-width:270px;">
+                    <p><strong>
+                            <%= product.productName %>
+                        </strong></p>
+                    <p>Price: <%= product.price %> BD</p>
+                    <a href="/products/<%= product._id  %>"> View Details</a>
+                </div>
+                <% }) %>
         </div>
 </body>
 

@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/productDetails.css">
     <title>Zahraa Yarnn</title>
 </head>
+
 <body>
     <%- include('../partials/navbar') %>
-    <div class="product-details-page">
-        <div class="product-image">
-            <img src="<%= foundProduct.image %>" alt="Product Image" style="max-width:400px;">
-        </div>
-        <div class="product-info">
-    <h2><%= foundProduct.productName %> </h2>
-    <p>Price: <%= foundProduct.price %> BD</p>
-    <p><%= foundProduct.description %></p>
+        <div class="product-details-page">
+            <div class="product-image">
+                <img src="<%= foundProduct.image %>" alt="Product Image" style="max-width:400px;">
+            </div>
+            <div class="product-info">
+                <h2>
+                    <%= foundProduct.productName %>
+                </h2>
+                <p>Price: <%= foundProduct.price %> BD</p>
+                <p>
+                    <%= foundProduct.description %>
+                </p>
 
-    <form action="/cart/add/<%= foundProduct._id %>" method="post">
-        <label for="quantity">Quantity:</label>
-        <select id="quantity" name="quantity">
-            <% for (let i = 1; i <= 10; i++) { %>
-                <option value="<%= i %>"><%= i %></option>
-            <% } %>
-        </select>
-        <button id="add-to-cart" type="submit">Add to Cart</button>
-    </form>
-   <div class="admin-actions">
-    <% if ( userRole.role === 'admin') { %>
-      <a id="update-product" href="/products/<%= foundProduct._id  %>/edit">Update</a>
-      <form action="/products/<%= foundProduct._id  %>?_method=delete" method="post">
-          <button type="submit">Delete</button>
-        </form>
-        <% } %>
-    </div>    
-        </div>  
-    </div>   
+                <form action="/cart/add/<%= foundProduct._id %>" method="post">
+                    <label for="quantity">Quantity:</label>
+                    <select id="quantity" name="quantity">
+                        <% for (let i=1; i <=10; i++) { %>
+                            <option value="<%= i %>">
+                                <%= i %>
+                            </option>
+                            <% } %>
+                    </select>
+                    <button id="add-to-cart" type="submit">Add to Cart</button>
+                </form>
+                <div class="admin-actions">
+                    <% if ( userRole.role==='admin' ) { %>
+                        <a id="update-product" href="/products/<%= foundProduct._id  %>/edit">Update</a>
+                        <form action="/products/<%= foundProduct._id  %>?_method=delete" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <% } %>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>

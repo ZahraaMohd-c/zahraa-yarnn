@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
- body {
+body {
     background-color: #ede0eea8;
     margin: 0;
     padding: 0;
@@ -12,59 +12,39 @@
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background:  #e9c7ed; 
-  padding: 15px 40px;
-  color:  #333;
-  font-family: "Poppins", Arial, sans-serif;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e9c7ed;
+    padding: 15px 40px;
+    color: #333;
+    font-family: "Poppins", Arial, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
 
 .navbar-brand {
-  max-width: 180px;
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin: 0;
-  color:  #333;
+    max-width: 180px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0;
+    color: #333;
 }
 
 #nav-login a {
-  color: #0e391d;
-  text-decoration: none;
-  margin-left: 25px;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
+    color: #0e391d;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
 }
 
 #nav-login a:hover {
-  color: #1a7239; 
-  border-bottom: 2px solid #1a7239;
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  #nav-login, #nav-before-login {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  #nav-login a,
-  #nav-before-login a {
-    margin: 0;
-  }
+    color: #1a7239;
+    border-bottom: 2px solid #1a7239;
 }
