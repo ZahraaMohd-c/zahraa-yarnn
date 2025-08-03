@@ -58,7 +58,7 @@ router.get('/:id/edit', async (req,res) => {
     try{
         const foundProduct = await Product.findById(req.params.id)
         res.render('products/update.ejs',{foundProduct})
-
+        
     }
     catch(error){
         console.log(error)
@@ -67,7 +67,23 @@ router.get('/:id/edit', async (req,res) => {
 
 router.put('/:id',upload.single("image"), async (req,res) => {
     try{
-        const updateProduct = await Product.findByIdAndUpdate(req.params.id, req.body)
+        const {productName, price, description} = req.body
+        const foundProduct = await Product.findById(req.params.id)
+
+         if (req.file) {
+            if (foundProduct.imagePublicId) {
+                await cloudinary.uploader.destroy(foundProduct.imagePublicId);
+            }
+
+            foundProduct.image = req.file.path;
+            foundProduct.imagePublicId = req.file.filename;
+        }
+        
+        foundProduct.productName = productName
+        foundProduct.price = price
+        foundProduct.description = description
+
+        await foundProduct.save()
         res.redirect('/products')
 
     }
@@ -78,7 +94,13 @@ router.put('/:id',upload.single("image"), async (req,res) => {
 
 router.delete('/:id',upload.single("image"), async (req,res) => {
     try{
-        const deleteProduct = await Product.findByIdAndUpdate(req.params.id)
+        if (req.file) {
+            if (foundProduct.imagePublicId) {
+                await cloudinary.uploader.destroy(foundProduct.imagePublicId);
+            }
+            
+        }
+        const deleteProduct = await Product.findByIdAndDelete(req.params.id)
         res.redirect('/products')
 
 

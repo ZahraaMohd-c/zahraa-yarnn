@@ -18,7 +18,7 @@
     text-align: center;
     margin-bottom: 25px;
     font-size: 1.8rem;
-    color: #444;
+    color: #0e391d;
 }
 
 form div {
@@ -46,7 +46,7 @@ textarea {
 
 button {
   padding: 12px;
-  background: #555;
+  background: #0e391d;
   color: white;
   font-size: 1rem;
   border: none;
@@ -75,12 +75,12 @@ button:hover {
 .top-title h1 {
     font-size: 1.8rem;
     margin: 0;
-    color: #3b3b3b;
+    color: #0e391d;
 }
 
 .top-title form button {
     padding: 10px 20px;
-    background-color: #6b705c;
+    background-color: #0e391d;
     border: none;
     border-radius: 8px;
     color: white;
@@ -90,7 +90,7 @@ button:hover {
 }
 
 .top-title form button:hover {
-    background: #5a5f4d;
+    background: #1a6936;
 }
 
 .allProducts-page {
@@ -100,7 +100,7 @@ button:hover {
     padding: 30px;
     max-width: 1100px;
     margin: auto;
-    justify-items: center; /* center items in their grid cell */
+    justify-items: center; 
 }
 
 
