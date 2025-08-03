@@ -127,3 +127,6 @@ button{
   outline: none;
   transition: border 0.3s;
 }
+.right p {
+    padding-top: 5px;
+}

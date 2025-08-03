@@ -7,6 +7,47 @@
 
 .top-title h1 {
     font-size: 1.8rem;
-    margin: 0;
-    color: #3b3b3b;
+    margin-left:50px;
+    color: #0e391d;
+}
+
+.order-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+}
+
+button{
+  padding: 12px;
+  background: #0e391d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-left: 480px;
+
+}
+
+.order-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70vh;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+
 }
