@@ -44,10 +44,9 @@ nav {
   border-bottom: 2px solid transparent;
 }
 
-#nav-login a:hover,
-#nav-before-login a:hover {
-  color: #6b705c; 
-  border-bottom: 2px solid #6b705c;
+#nav-login a:hover {
+  color: #1a7239; 
+  border-bottom: 2px solid #1a7239;
 }
 
 @media (max-width: 768px) {

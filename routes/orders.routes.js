@@ -30,7 +30,6 @@ router.get('/:productId', async(req,res) => {
     
 })
 
-// Checkout route: create order from cart
 router.post('/checkout', async (req, res) => {
     try {
         const user = res.locals.user || req.user;

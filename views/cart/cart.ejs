@@ -13,14 +13,18 @@
         <div class="top-title">
             <h1> Cart</h1>
         </div>
-        </div class='cart-content'>
+        <div class='cart-content'>
+            <% let total=0 %>
          <% cartItems.forEach(item=> { %>
+            <% let price= item.price * item.quantity %>
             <div class="cart-item">
                 <div class="cart-image">
                     <img src="<%= item.image %>" alt="Product Image" style="max-width:150px;">
                 </div>
                 <div class="item-info">
-                    <p>Product: <%= item.productName %> | Quantity: <%= item.quantity %> | Price: <%= item.price %> BD |Total: <%= item.price * item.quantity %> BD</p>
+                    <p>Product: <%= item.productName %> | Quantity: <%= item.quantity %> | Price: <%= item.price %> BD </p>
+                    <p>Total: <%=price%> BD</p>
+                    <% total+= price %>
                     <div class="cart-forms">
                         <form action="/cart/update/<%= item.productId %>?_method=PUT" method="post">
                             <label for="quantity">Quantity:</label>
@@ -41,11 +45,15 @@
             </div>
 
             <% }) %>
+            <div class="checkout">
                 <form action="/orders/checkout" method="post">
-                    <label for="notes">Note:</label>
                     <textarea id="notes" name="notes" placeholder="Add a note.."></textarea>
-                    <button type="submit">Place Order</button>
+                    <div class="right">
+                        <p class="total">Total price: <%= total %> BD</p>
+                        <button type="submit">Place Order</button>
+                    </div>
                 </form>
+            </div>
         </div>
 </body>
 
