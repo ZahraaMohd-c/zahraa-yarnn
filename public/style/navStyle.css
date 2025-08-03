@@ -33,9 +33,8 @@ nav {
   color:  #333;
 }
 
-#nav-login a,
-#nav-before-login a {
-  color: #3b3b3b;
+#nav-login a {
+  color: #0e391d;
   text-decoration: none;
   margin-left: 25px;
   font-size: 1rem;

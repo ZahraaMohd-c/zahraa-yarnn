@@ -14,7 +14,6 @@ const ordersRoutes = require('./routes/orders.routes')
 const productsRoutes = require('./routes/products.routes')
 const authRoutes = require('./routes/auth.routes')
 const cartRouter = require('./routes/cart.routes')
-const homeRouter = require('./routes/home.routes')
 
 // Middleware
 app.use(express.static('public'))
@@ -41,7 +40,6 @@ app.use(isSignedIn)
 app.use('/orders',ordersRoutes)
 app.use('/products',productsRoutes)
 app.use('/cart',cartRouter)
-app.use('/',homeRouter)
 // app.use(isAdmin)
 
 
