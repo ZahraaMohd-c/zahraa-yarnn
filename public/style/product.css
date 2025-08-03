@@ -1,4 +1,4 @@
-/* new product style */
+/* new product & update product style */
 
 .newProduct-page {
     display: flex;
@@ -143,3 +143,4 @@ button:hover {
 .product-card a:hover {
     background:  #5a5f4d;
 }
+

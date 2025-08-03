@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zahraa Yarnn</title>
+    <link rel="stylesheet" href="/style/orders.css">
 </head>
 <body>
     <%- include('../partials/navbar') %>
 
     <% if(userFull.role === 'admin') { %>
-        <h1>All Orders</h1>
+        <div class="top-title">
+           <h1>All Orders</h1> 
+        </div>
         <% allOrders.forEach(order => { %>
         <p>Order ID: <%= order._id %></p>
         <p>Order Date: <%= order.createdAt.toLocaleDateString() %></p>
@@ -29,7 +32,9 @@
         <hr>
     <% }); %>
     <% } else { %>
-        <h1>Your Orders</h1>
+        <div class="top-title">
+            <h1>Your Orders</h1>
+        </div>
         <% allOrders.forEach(order => { %>
             <% if(order.user._id.toString() === userFull._id.toString()) { %>
                 <p>Order ID: <%= order._id %></p>
@@ -42,7 +47,6 @@
                     <% total += item.product.price * item.quantity; %>
                 <% }); %>
                 <p>Total: <%= total %> BD</p>
-                <hr>
             <% } %>
         <% }); %>
     <% } %>

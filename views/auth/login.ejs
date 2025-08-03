@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="/style/auth.css">
 </head>
 <body>
-    <%#- include('../partials/navbar') %>
     <div class="login-page">
     <h1 id="login">Login</h1>
     
     <form action="/auth/login" method="post">
         <div class="input-field">
-            <input placeholder="username" type="text" id="username" name="username">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
         </div>
         <div class="input-field">
-            <input placeholder="password" type="password" id="password" name="password" >
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" >
         </div>
         <div class="button-container">
             <button type="submit">Login</button>

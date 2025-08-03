@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style/cart.css">
 </head>
+
 <body>
     <%- include('../partials/navbar') %>
-    <h1> Cart</h1>
-    <% cartItems.forEach(item => { %>
-  <p>Product: <%= item.productName %> | Quantity: <%= item.quantity %> | Price: <%= item.price %> BD | Total: <%= item.price * item.quantity %> BD</p>
-  <form action="/cart/update/<%= item.productId %>?_method=PUT" method="post">
-      <label for="quantity">Quantity:</label>
-      <select id="quantity" name="quantity" onchange="this.form.submit()">
-          <% for (let i = 1; i <= 10; i++) { %>
-              <option value="<%= i %>" <%= item.quantity == i ? 'selected' : '' %>><%= i %></option>
-          <% } %>
-      </select>
+        <div class="top-title">
+            <h1> Cart</h1>
+        </div>
+        </div class='cart-content'>
+         <% cartItems.forEach(item=> { %>
+            <div class="cart-item">
+                <div class="cart-image">
+                    <img src="<%= item.image %>" alt="Product Image" style="max-width:150px;">
+                </div>
+                <div class="item-info">
+                    <p>Product: <%= item.productName %> | Quantity: <%= item.quantity %> | Price: <%= item.price %> BD |Total: <%= item.price * item.quantity %> BD</p>
+                    <div class="cart-forms">
+                        <form action="/cart/update/<%= item.productId %>?_method=PUT" method="post">
+                            <label for="quantity">Quantity:</label>
+                            <select id="quantity" name="quantity" onchange="this.form.submit()">
+                                <% for (let i=1; i <=10; i++) { %>
+                                    <option value="<%= i %>" <%=item.quantity==i ? 'selected' : '' %>><%= i %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </form>
+                        <form action="/cart/remove/<%= item.productId %>" method="post">
+                            <button type="submit">Remove</button>
+        
+                        </form>
+                    </div>
 
-  </form>
-  <form action="/cart/remove/<%= item.productId %>" method="post">
-      <button type="submit">Remove</button>
+                </div>
+            </div>
 
-  </form>
-<% }) %>
-<form action="/orders/checkout" method="post">
-    <label for="notes">Note:</label>
-    <textarea id="notes" name="notes" placeholder="Add a note.."></textarea>
-    <button type="submit">Place Order</button>
-</form>
-
+            <% }) %>
+                <form action="/orders/checkout" method="post">
+                    <label for="notes">Note:</label>
+                    <textarea id="notes" name="notes" placeholder="Add a note.."></textarea>
+                    <button type="submit">Place Order</button>
+                </form>
+        </div>
 </body>
+
 </html>

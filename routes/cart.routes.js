@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const product = require('../models/product')
+const {cloudinary, multerSetup } = require("../config/cloudinary")
+const upload = multerSetup()
 
 router.post('/add/:productId', async (req, res) => {
     if (!req.session.cart) req.session.cart = [];
@@ -7,7 +9,7 @@ router.post('/add/:productId', async (req, res) => {
     res.redirect('/products');
 })
 
-router.get('/', async (req, res) => {
+router.get('/',upload.single("image"), async (req, res) => {
     const cartItems = req.session.cart || [];
     const populatedCartItems = [];
     for (const item of cartItems) {
@@ -17,7 +19,9 @@ router.get('/', async (req, res) => {
                 productId: item.product,
                 productName: prod.productName,
                 price: prod.price,
-                quantity: item.quantity
+                quantity: item.quantity,
+                image: prod.image
+
             });
         }
     }
