@@ -7,7 +7,6 @@ const conntectToDB = require('./config/db')
 const session = require('express-session')
 const passUserToView =require('./middleware/passUserToView')
 const isSignedIn = require('./middleware/isSignedIn')
-const isAdmin = require('./middleware/isAdmin')
 
 
 const ordersRoutes = require('./routes/orders.routes')
@@ -40,7 +39,8 @@ app.use(isSignedIn)
 app.use('/orders',ordersRoutes)
 app.use('/products',productsRoutes)
 app.use('/cart',cartRouter)
-// app.use(isAdmin)
+
+
 
 
 
@@ -59,7 +59,3 @@ server.on("error", (err) => {
     console.error(" Server error:", err.message);
   }
 })
-
-
-
-
