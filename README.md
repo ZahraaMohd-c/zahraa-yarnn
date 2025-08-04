@@ -8,6 +8,8 @@ The goal of the project was not only to showcase my technical skills in back-end
 
 <img width="935" height="437" alt="Image" src="https://github.com/user-attachments/assets/b77dec5b-7a76-4efc-9943-e524c7446f4c" />
 
+
+
 ## Getting started
 
 
