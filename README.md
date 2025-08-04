@@ -12,6 +12,8 @@ The goal of the project was not only to showcase my technical skills in back-end
 
 ## Getting started
 
+- [Website link](https://zahraayarnn.onrender.com/auth/sign-up)
+
 
 ## Atributions
 - [fonts](https://fonts.google.com/)
@@ -21,15 +23,16 @@ The goal of the project was not only to showcase my technical skills in back-end
 
 ## Technologies Used
 
-- HTML
+- ejs
 - CSS
 - JavaScript
-- MondoDB
+- MongoDB
 - Express
 - Node.js
 
 
 ## Additional features (planned)
+
 - email notifications and invoices for orders
 - customizing a product feature
 - improving UX 
