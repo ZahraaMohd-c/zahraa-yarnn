@@ -4,7 +4,9 @@ const {cloudinary, multerSetup } = require("../config/cloudinary")
 const upload = multerSetup()
 
 router.post('/add/:productId', async (req, res) => {
-    if (!req.session.cart) req.session.cart = [];
+    if (!req.session.cart){
+        req.session.cart = [];
+    } 
     req.session.cart.push({ product: req.params.productId, quantity: req.body.quantity || 1 });
     res.redirect('/products');
 })

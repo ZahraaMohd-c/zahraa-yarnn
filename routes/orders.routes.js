@@ -36,7 +36,7 @@ router.post('/checkout', async (req, res) => {
         const notes =req.body.notes || ''
         const cartItems = req.session.cart || [];
         if (cartItems.length === 0) {
-            return res.send('Cart is empty');
+            return res.redirect('/cart');
         }
 
         const products = cartItems.map(item => ({
