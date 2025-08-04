@@ -3,6 +3,7 @@ const Product = require('../models/product')
 const User = require('../models/User')
 const {cloudinary, multerSetup } = require("../config/cloudinary")
 const upload = multerSetup()
+const isAdmin =require('../middleware/isAdmin')
 
 router.get('/', async (req,res) => {
     try{
@@ -16,12 +17,12 @@ router.get('/', async (req,res) => {
     }
 })
 
-router.get('/new',(req,res) =>{
+router.get('/new',isAdmin,(req,res) =>{
     res.render('products/new.ejs')
 })
 
 
-router.post('/', upload.single("image") ,async (req,res) => {
+router.post('/',isAdmin, upload.single("image") ,async (req,res) => {
     try{
         const {productName, price, description} = req.body
 
@@ -54,7 +55,7 @@ router.get('/:id', async (req,res) => {
     }
 })
 
-router.get('/:id/edit', async (req,res) => {
+router.get('/:id/edit',isAdmin, async (req,res) => {
     try{
         const foundProduct = await Product.findById(req.params.id)
         res.render('products/update.ejs',{foundProduct})
@@ -65,7 +66,7 @@ router.get('/:id/edit', async (req,res) => {
     }
 })
 
-router.put('/:id',upload.single("image"), async (req,res) => {
+router.put('/:id',isAdmin,upload.single("image"), async (req,res) => {
     try{
         const {productName, price, description} = req.body
         const foundProduct = await Product.findById(req.params.id)
@@ -92,7 +93,7 @@ router.put('/:id',upload.single("image"), async (req,res) => {
     }
 })
 
-router.delete('/:id',upload.single("image"), async (req,res) => {
+router.delete('/:id',isAdmin,upload.single("image"), async (req,res) => {
     try{
         if (req.file) {
             if (foundProduct.imagePublicId) {
