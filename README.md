@@ -12,7 +12,7 @@ The goal of the project was not only to showcase my technical skills in back-end
 
 ## Getting started
 
-- [Website link](https://zahraayarnn.onrender.com/auth/sign-up)
+- [🔗 open the website](https://zahraayarnn.onrender.com/auth/sign-up)
 
 
 ## Atributions
